@@ -211,6 +211,10 @@ button:focus {
   transform: translateY(15%);
 }
 
+.image-container img {
+  max-width: 400px;
+}
+
 .success-message-container {
   display: none;
 }
@@ -268,6 +272,11 @@ button:focus {
   font-weight: bold;
 }
 
+@media screen and (max-width: 820px) {
+  .image-container img {
+    max-width: 350px;
+  }
+}
 @media screen and (max-width: 768px) {
   body {
     justify-content: flex-start;
@@ -316,6 +325,7 @@ button:focus {
   .image-container picture,
   .image-container img {
     width: 100%;
+    max-width: unset;
     object-fit: fill;
   }
 
