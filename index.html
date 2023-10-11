@@ -23,13 +23,13 @@
           <li>And much more!</li>
         </ul>
         <!-- Sign-up form start -->
-        <form id="subcribe-form">
+        <form id="subscribe-form">
           <fieldset>
             <label for="email-address">
               <span>Email address</span>
               <span class="validation-error">Valid email required</span>
             </label>
-            <input type="email" name="email-address" id="email-address" placeholder="email@company.com">
+            <input type="email" name="email-address" id="email-address" placeholder="email@company.com" required>
             <button id="submit-btn" type="submit">Subscribe to monthly newsletter</button>
           </fieldset>
         </form>
@@ -45,16 +45,16 @@
     </section>
 
     <!-- Success message start -->
-    <section class="success-message">
+    <section class="success-message-container">
       <div class="success-message-content">
         <img src="./assets/images/icon-success.svg" alt="Success Checkmark" width="64" height="64" />
         <h1>Thanks for subscribing!</h1>
 
-        <p>A confirmation email has been sent to <span id="confirmationEmail"
-            class="confirmation-email">ash@loremcompany.com</span>. Please open it and click the button inside to
+        <p>A confirmation email has been sent to <span class="confirmation-email">ash@loremcompany.com</span>. Please
+          open it and click the button inside to
           confirm your subscription.</p>
       </div>
-      <button id="dismissMessage">Dismiss message</button>
+      <button id="dismiss-btn">Dismiss message</button>
     </section>
     <!-- Success message end -->
 
@@ -67,6 +67,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Paul C Crescini</a>.
   </footer>
+  <script src="/assets/js/main.js"></script>
 </body>
 
 </html>

@@ -53,6 +53,7 @@ h6 {
   --color-pale-navy: #36384d;
   --color-dark-navy: #242742;
   --color-vermellion: #ff6155;
+  --color-vermellion-15: #ff615515;
   --color-white: #ffffff;
   --color-grey: #19182b25;
   --body-border-radius: 36px;
@@ -210,15 +211,15 @@ button:focus {
   transform: translateY(15%);
 }
 
-.success-message {
+.success-message-container {
   display: none;
 }
 
-.success-message img {
+.success-message-container img {
   margin-bottom: 2.5rem;
 }
 
-.success-message button {
+.success-message-container button {
   margin-top: 1.25rem;
 }
 
@@ -226,12 +227,28 @@ button:focus {
   display: none;
 }
 
-.active .success-message {
+.active .success-message-container {
   display: block;
 }
 
 .validation-error {
+  display: none;
   color: var(--color-vermellion);
+}
+
+.error .validation-error {
+  display: inline-block;
+}
+
+.error input[type='email'] {
+  font-weight: bold;
+  color: var(--color-vermellion);
+  border: 1px solid var(--color-vermellion);
+  background-color: var(--color-vermellion-15);
+}
+
+.error input[type='email']:focus {
+  outline-color: var(--color-vermellion);
 }
 
 .confirmation-email {
@@ -302,7 +319,7 @@ button:focus {
     object-fit: fill;
   }
 
-  .active .success-message {
+  .active .success-message-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
