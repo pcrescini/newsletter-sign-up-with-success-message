@@ -1,22 +1,25 @@
-# Frontend Mentor - Newsletter sign-up form with success message
+# Frontend Mentor - Newsletter sign-up form with success message solution
 
-![Design preview for the Newsletter sign-up form with success message coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Newsletter sign-up form with success message challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshots](#screenshots)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+### The challenge
 
-## The challenge
-
-Your challenge is to build out this newsletter form and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - Add their email and submit the form
 - See a success message with their email after successfully submitting the form
@@ -26,74 +29,88 @@ Your users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Screenshots
 
-## Where to find everything
+#### Desktop
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+![](./assets/screenshots/desktop.jpg)
+![](./assets/screenshots/demo-desktop.gif)
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+#### Mobile
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+![](./assets/screenshots/mobile.jpg)
+![](./assets/screenshots/demo-mobile.gif)
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+### Links
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+- Solution URL: [https://github.com/pcrescini/newsletter-sign-up-with-success-message](https://github.com/pcrescini/newsletter-sign-up-with-success-message)
+- Live Site URL: [https://graceful-taffy-f610a2.netlify.app/](https://graceful-taffy-f610a2.netlify.app/)
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+## My process
 
-## Building your project
+### Built with
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+### What I learned
 
-## Deploying your project
+No matter how much you think you know CSS, there is still plenty to learn! One the more challening CSS aspects of this project was using SVG files for the bullet points.
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+I first used the 'list-style-image' CSS property to display the custom bullet points.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+```css
+.content-container ul {
+  list-style-image: url('/assets/images/icon-list.svg');
+  list-style-position: inside;
+}
+```
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+However, I soon found out that when the text wraps to the next line, it will go directly underneath the bullet point.
 
-## Create a custom `README.md`
+![](./assets/screenshots/bullet-points.png)
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+Unfortunately, this won't do as it does not match the design specs:
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+![](./design/mobile-design.jpg)
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+Next, I decided to try to use the ::marker pseudo-element to style the list item elements. This seemed promising at first until I read that only certain CSS properties can be used in a rule with the ::marker selector (See [mdn web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker))
 
-## Submitting your solution
+Finally, I resulted in the tried and true method of using the ::before pseudo-element to style the list item:
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+```css
+.content-container ul li {
+  list-style: none;
+  margin-left: 2rem;
+  margin-bottom: 0.75rem;
+}
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+.content-container ul li::before {
+  content: '';
+  display: inline-block;
+  width: 31px;
+  height: 21px;
+  background-image: url('/assets/images/icon-list.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 0.5rem;
+  transform: translateY(15%);
+}
+```
 
-## Sharing your solution
+### Continued development
 
-There are multiple places you can share your solution:
+Even though I've been working on bulding websites in some form or fashion for over 10 years, there is a lot left for me to learn. Like most things in life, if you don't use certain skills on repeated basis then you're most likely going to lose said skills. My continued development goal is to keep using my web development skills by building as many projects as I can.
 
-1. Share your solution page in the **#finished-projects** channel of our [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+### Useful resources
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+- [mdn webdocs](https://developer.mozilla.org/en-US/) - This website is my absolute go-to resource for all things web.
 
-## Got feedback for us?
+## Author
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+- Website - [Add your name here](https://www.your-site.com)
+- Frontend Mentor - [@pcrescini](https://www.frontendmentor.io/profile/pcrescini)
+- Twitter - [@paulccrescini](https://www.twitter.com/paulccrescini)
