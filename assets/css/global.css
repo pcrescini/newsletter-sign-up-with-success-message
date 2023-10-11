@@ -272,6 +272,21 @@ button:focus {
   font-weight: bold;
 }
 
+.skip-nav {
+  position: absolute;
+  top: 0;
+  left: 45%;
+  transform: translateY(-100%);
+  background-color: var(--color-white);
+  color: blue;
+  padding: 10px;
+  z-index: 100;
+}
+
+.skip-nav:focus {
+  transform: translateY(0%);
+}
+
 @media screen and (max-width: 820px) {
   .image-container img {
     max-width: 350px;

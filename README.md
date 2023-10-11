@@ -33,12 +33,10 @@ Users should be able to:
 
 #### Desktop
 
-![](./assets/screenshots/desktop.jpg)
 ![](./assets/screenshots/demo-desktop.gif)
 
 #### Mobile
 
-![](./assets/screenshots/mobile.jpg)
 ![](./assets/screenshots/demo-mobile.gif)
 
 ### Links
@@ -103,14 +101,12 @@ Finally, I resulted in the tried and true method of using the ::before pseudo-el
 
 Even though I've been working on bulding websites in some form or fashion for over 10 years, there is a lot left for me to learn. Like most things in life, if you don't use certain skills on repeated basis then you're most likely going to lose said skills. My continued development goal is to keep using my web development skills by building as many projects as I can.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
 ### Useful resources
 
 - [mdn webdocs](https://developer.mozilla.org/en-US/) - This website is my absolute go-to resource for all things web.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
+- Website - [paulcrescini.com](https://www.paulcrescini.com)
 - Frontend Mentor - [@pcrescini](https://www.frontendmentor.io/profile/pcrescini)
 - Twitter - [@paulccrescini](https://www.twitter.com/paulccrescini)

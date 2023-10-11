@@ -12,6 +12,7 @@
 </head>
 
 <body>
+  <a id="skipNav" class="skip-nav" href="#main">Skip to main content</a>
   <main id="main" class="_active">
     <section class="container">
       <div class="content-container">
@@ -29,7 +30,8 @@
               <span>Email address</span>
               <span class="validation-error">Valid email required</span>
             </label>
-            <input type="email" name="email-address" id="email-address" placeholder="email@company.com" required>
+            <input type="email" name="email-address" id="email-address" placeholder="email@company.com"
+              aria-required="true" required>
             <button id="submit-btn" type="submit">Subscribe to monthly newsletter</button>
           </fieldset>
         </form>
@@ -64,8 +66,10 @@
 
 
   <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Paul C Crescini</a>.
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+      aria-label="Frontend Mentor - link opens in a new tab">Frontend Mentor</a>.
+    Coded by <a href="https://www.frontendmentor.io/profile/pcrescini" target="_blank"
+      aria-label="Paul C Crescini Frontend Mentor Profile - link opens in a new tab">Paul C Crescini</a>.
   </footer>
   <script src="/assets/js/main.js"></script>
 </body>
